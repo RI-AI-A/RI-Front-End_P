@@ -11,12 +11,12 @@ export default defineConfig({
   server: {
     proxy: {
       '/api/cv': {
-        target: 'http://localhost:8000', // CV Backend
+        target: 'http://cv-backend:8000', // CV Backend
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/cv/, '')
       },
       '/api/nlp': {
-        target: 'http://localhost:8001', // NLP Backend
+        target: 'http://nlp-backend:8001', // NLP Backend
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/nlp/, '')
       }
